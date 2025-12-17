@@ -1,0 +1,23 @@
+<Project>
+  <PropertyGroup>
+    <Configurations>Linux;Windows</Configurations>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <LangVersion>11</LangVersion>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <RootNamespace>Oxide.Plugins</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <ServerPath>$(MSBuildThisFileDirectory)../../dependencies/server/$(Configuration)</ServerPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="PolySharp" Version="*" />
+  </ItemGroup>
+
+  <Import Project="../../Rust.targets" />
+
+  <Import Project="Sdk.props" Sdk="Microsoft.NET.Sdk" />
+  <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" />
+</Project>

@@ -1,0 +1,5 @@
+<Project>
+  <ItemGroup>
+    <Reference Update="@(Reference)" Private="false" />
+  </ItemGroup>
+</Project>

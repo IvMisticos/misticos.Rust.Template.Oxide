@@ -1,0 +1,27 @@
+<Project>
+  <PropertyGroup>
+    <NoStandardLibraries>true</NoStandardLibraries>
+    <NoStdLib>true</NoStdLib>
+    <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
+    <NoCompilerStandardLib>true</NoCompilerStandardLib>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="$(ServerPath)/RustDedicated_Data/Managed/*.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Oxide.Common contains types already present in mscorlib -->
+    <Reference Remove="$(ServerPath)/**/Oxide.Common.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Oxide.References includes these already -->
+    <Reference Remove="$(ServerPath)/**/Mono.Cecil.dll" />
+    <Reference Remove="$(ServerPath)/**/Mono.Cecil.Rocks.dll" />
+    <Reference Remove="$(ServerPath)/**/Mono.Posix.dll" />
+    <Reference Remove="$(ServerPath)/**/Newtonsoft.Json.dll" />
+    <Reference Remove="$(ServerPath)/**/websocket-sharp.dll" />
+    <Reference Remove="$(ServerPath)/**/protobuf-net.dll" />
+  </ItemGroup>
+</Project>
