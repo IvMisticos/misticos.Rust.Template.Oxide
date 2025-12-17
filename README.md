@@ -14,7 +14,19 @@ Barebones template for building Harmony mods and Oxide plugins for the game Rust
 
 ## Updating
 
-Run `Update.PS1` to download the most recent Rust and Oxide files.
+Run `Update.PS1` to download the most recent Rust and Oxide files. Examples:
+
+```powershell
+# PowerShell
+Unblock-File ./Update.PS1 # Required on Windows (once)
+./Update.PS1 -Clean 1
+```
+
+```shell
+# Other shells
+pwsh -Command "Unblock-File ./Update.PS1" # Required on Windows (once)
+pwsh -Command "& ./Update.PS1 -Clean 1"
+```
 
 | Parameter             | Description                                          |
 | --------------------- | ---------------------------------------------------- |
