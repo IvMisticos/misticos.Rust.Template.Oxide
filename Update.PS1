@@ -72,10 +72,10 @@ switch ($OS) {
 
     'Linux' {
         if ($Staging) {
-            $LinkOxide = 'https://github.com/OxideMod/Oxide.Rust/releases/latest/download/Oxide.Rust-linux.zip'
+            $LinkOxide = 'https://downloads.oxidemod.com/artifacts/Oxide.Rust/staging/Oxide.Rust-linux.zip'
         }
         else {
-            $LinkOxide = 'https://downloads.oxidemod.com/artifacts/Oxide.Rust/staging/Oxide.Rust-linux.zip'
+            $LinkOxide = 'https://github.com/OxideMod/Oxide.Rust/releases/latest/download/Oxide.Rust-linux.zip'
         }
     }
 
