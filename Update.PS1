@@ -89,3 +89,10 @@ $ArchiveOxide = Join-Path $FolderServer 'Oxide.zip'
 Invoke-WebRequest $LinkOxide -OutFile $ArchiveOxide
 Expand-Archive -Path $ArchiveOxide -DestinationPath $FolderServer -Force
 Remove-Item -Path $ArchiveOxide -Force
+
+Start-Process -FilePath 'dotnet' -ArgumentList @(
+    'run'
+    'Publicize.cs'
+    '--'
+    $(Join-Path $FolderServer 'RustDedicated_Data' 'Managed')
+) -NoNewWindow -PassThru | Wait-Process
