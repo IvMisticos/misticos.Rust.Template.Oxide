@@ -35,13 +35,13 @@ Parallel.ForEach(targets, path =>
     catch (Exception ex)
     {
         failures.Add(Path.GetFileName(path));
-        Console.Error.WriteLine($"failed {Path.GetFileName(path)}: {ex.Message}");
+        Console.Error.WriteLine($"Failed {Path.GetFileName(path)}: {ex.Message}");
     }
 });
 
 Console.WriteLine();
 Console.WriteLine(
-    $"total: " +
+    $"Total: " +
     $"{targets.Length - failures.Count}/{targets.Length} assemblies, " +
     $"{totalTypes} types, " +
     $"{totalMethods} methods, " +
